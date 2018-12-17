@@ -3,8 +3,8 @@ This is a quick introduction to create private blockchain networks over Ethereum
 
 ## Requisites ##
 
-* Linux-like Operative System. Tested particularily in Ubuntu 16.04.03 LTE
-*
+* **Linux-like Operative System**: Tested particularily in Ubuntu 16.04.03 LTE
+* **Geth**:  Tested in version 1.8.1-stable-1e67410e but is should work with all compatible versions. 
 
 ## 0.1 Create a home blockchain folder: ##
 ```console
@@ -12,19 +12,19 @@ foo@bar:~$ mkdir ethereum_private_network
 ```
 ## 0.2 Export variable: ##
 ```console
-foo@bar:~$ export ETHEREUM_HOME='/home/foo/Desktop/ethereum_private_network' 
+foo@bar:~$ export ETHEREUM_HOME='/home/foo/ethereum_private_network' 
 ```
 ### 0.2.1 Check: ### 
 ```console
 foo@bar:~$ $ETHEREUM_HOME 
 bash: /home/foo/Desktop/ethereum_private_network: Is a directory
 foo@bar:~$ printenv | grep ETHEREUM_HOME
-ETHEREUM_HOME=/home/foo/Desktop/ethereum_private_network
+ETHEREUM_HOME=/home/foo/ethereum_private_network
 ```
 This way, you will have to export the variable every time you start your computer. 
 In order to save it, you should save these commands as lines in your `~/.bashrc` file:
 ```vim
- export ETHEREUM_HOME='/home/foo/Desktop/ethereum_private_network'
+ export ETHEREUM_HOME='/home/foo/ethereum_private_network'
 ```
 
 
@@ -59,31 +59,60 @@ A genesis block is the first block of a block chain. Modern versions of Bitcoin 
 
 
 
-2. Initialize first node: 
-$ geth --datadir "$ETHEREUM_HOMEº/node1" init "$ETHEREUM_HOME/genesis.json" # this will create a node in the path given .../node1
+ ## 2. Initialize first node: ## 
+Command below  will create a node in the path given .../node1
+```console
+foo@bar:~$ geth --datadir "$ETHEREUM_HOME/node1" init "$ETHEREUM_HOME/genesis.json"
+INFO [12-17|09:49:49] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [12-17|09:49:49] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum_private_network/node1/geth/chaindata cache=16 handles=16
+INFO [12-17|09:49:49] Persisted trie from memory database      nodes=3 size=503.00B time=10.15µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [12-17|09:49:49] Successfully wrote genesis state         database=chaindata                                                           hash=4189da…65f92f
+INFO [12-17|09:49:49] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum_private_network/node1/geth/lightchaindata cache=16 handles=16
+INFO [12-17|09:49:49] Persisted trie from memory database      nodes=3 size=503.00B time=13.323µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [12-17|09:49:49] Successfully wrote genesis state         database=lightchaindata                                                           hash=4189da…65f92f
+```
+As it is visible in the logs, everything went fine.
 
-3. Start interactive geth  javascript console (so powerful for sending transactions, starting the miner...): 
-$ sudo geth --datadir "$ETHEREUM_HOME/node1" console 2>console.log # we want to save all logs in console.log
-> eth.blockNumber   # check we are in block 0 (only the genesis block has been created).
+## 3. Start interactive geth  javascript console ##
+This console is powerful for sending transactions, starting the miner... 
+command below let you sabe all logs in console.log.
 
-4. once in the console type: > admin. and press "tab" (2 times) to see all options you have
-5. We can see our node info: > admin.nodeInfo # shows the ip, ports and so on. we will need to use other different port for other nodes (obviously). It also outputs enode: ... this defines our node. to identify it we will use the last 4 hexadecimal numbers before 939f@62.42.(ip)
-6. another important for creating accounts,list them, list wallets...: > personal. (press tab 2 times) and shows up all options
-7. We will create our first account:
+Once the console is started, we type `eth.blockNumber` to chech we arre currently in block 0 (only the genesis block has been created).
+
+```console
+foo@bar:~$ sudo geth --datadir "$ETHEREUM_HOME/node1" console 2>console.log 
+[sudo] password for foo: 
+Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.8.1-stable-1e67410e/linux-amd64/go1.9.4
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+
+> eth.blockNumber
+0
+```
+## 4. once in the console type: ##
+> admin. and press "tab" (2 times) to see all options you have
+```console
+> admin. 
+```
+## 5. We can see our node info: ##
+> admin.nodeInfo # shows the ip, ports and so on. we will need to use other different port for other nodes (obviously). It also outputs enode: ... this defines our node. to identify it we will use the last 4 hexadecimal numbers before 939f@62.42.(ip)
+
+## 6. another important command for creating accounts,list them, list wallets...: ##
+> personal. (press tab 2 times) and shows up all options
+
+## 7. We will create our first account: ##
 > personal.newAccount()
-8. see if the account is well created: 
+## 8. see if the account is well created: ## 
 > personal.listAcounts 
 
-10. Initialize second node: 
+## 9. Initialize second node: ##
 $ geth --datadir "$ETHEREUM_HOME/node2" init "$ETHEREUM_HOME/genesis.json" # this will create a node in the path given .../node2. SEE THAT WE use the same genesis block!
 
 
 
-11. Start interactive geth  javascript console second node 
+## 10. Start interactive geth  javascript console second node ##
 $ sudo geth --datadir "$ETHEREUM_HOME/node2" --port 30304 --nodiscover --networkid 1234 console 2>console.log # different port from 1st node. also nodiscover for avoiding the node to attach to other neighbor blockchain (this is little paranoid, but just in case). and network id.
-
-
-
  geth --datadir path/to/custom/data/folder --networkid 15
  
  
