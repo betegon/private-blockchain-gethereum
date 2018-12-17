@@ -211,7 +211,7 @@ INFO [12-17|10:25:50] Starting P2P networking
 INFO [12-17|10:25:52] UDP listener up                          self=enode://dddf02c0553a42a1afec6d46562a3f2c313e20beb95bb4a767caa135252846d7a02b4c039d34c74848d8141234e639015b2d78c94f789e226e69d30c14676322@[::]:30303
 INFO [12-17|10:25:52] RLPx listener up                         self=enode://dddf02c0553a42a1afec6d46562a3f2c313e20beb95bb4a767caa135252846d7a02b4c039d34c74848d8141234e639015b2d78c94f789e226e69d30c14676322@[::]:30303
 INFO [12-17|10:25:52] IPC endpoint opened                      url=/home/foo/ethereum_private_network/geth.ipc
-
+```
  
  
  
