@@ -17,7 +17,7 @@ foo@bar:~$ export ETHEREUM_HOME='/home/foo/ethereum_private_network'
 ### 0.2.1 Check: ### 
 ```console
 foo@bar:~$ $ETHEREUM_HOME 
-bash: /home/foo/Desktop/ethereum_private_network: Is a directory
+bash: /home/foo/ethereum_private_network: Is a directory
 foo@bar:~$ printenv | grep ETHEREUM_HOME
 ETHEREUM_HOME=/home/foo/ethereum_private_network
 ```
@@ -64,10 +64,10 @@ Command below  will create a node in the path given .../node1
 ```console
 foo@bar:~$ geth --datadir "$ETHEREUM_HOME/node1" init "$ETHEREUM_HOME/genesis.json"
 INFO [12-17|09:49:49] Maximum peer count                       ETH=25 LES=0 total=25
-INFO [12-17|09:49:49] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum_private_network/node1/geth/chaindata cache=16 handles=16
+INFO [12-17|09:49:49] Allocated cache and file handles         database=/home/foo/ethereum_private_network/node1/geth/chaindata cache=16 handles=16
 INFO [12-17|09:49:49] Persisted trie from memory database      nodes=3 size=503.00B time=10.15µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
 INFO [12-17|09:49:49] Successfully wrote genesis state         database=chaindata                                                           hash=4189da…65f92f
-INFO [12-17|09:49:49] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum_private_network/node1/geth/lightchaindata cache=16 handles=16
+INFO [12-17|09:49:49] Allocated cache and file handles         database=/home/foo/ethereum_private_network/node1/geth/lightchaindata cache=16 handles=16
 INFO [12-17|09:49:49] Persisted trie from memory database      nodes=3 size=503.00B time=13.323µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
 INFO [12-17|09:49:49] Successfully wrote genesis state         database=lightchaindata                                                           hash=4189da…65f92f
 ```
@@ -171,10 +171,10 @@ NOTE THAT YOU HAVE TO SPECIFY THE SAME [genesis.json](genesis.json).
 ```console 
 foo@bar:~$ geth --datadir "$ETHEREUM_HOME/node2" init "$ETHEREUM_HOME/genesis.json" 
 INFO [12-17|10:19:13] Maximum peer count                       ETH=25 LES=0 total=25
-INFO [12-17|10:19:13] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum_private_network/node2/geth/chaindata cache=16 handles=16
+INFO [12-17|10:19:13] Allocated cache and file handles         database=/home/foo/ethereum_private_network/node2/geth/chaindata cache=16 handles=16
 INFO [12-17|10:19:13] Persisted trie from memory database      nodes=3 size=503.00B time=9.521µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
 INFO [12-17|10:19:13] Successfully wrote genesis state         database=chaindata                                                           hash=4189da…65f92f
-INFO [12-17|10:19:13] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum_private_network/node2/geth/lightchaindata cache=16 handles=16
+INFO [12-17|10:19:13] Allocated cache and file handles         database=/home/foo/ethereum_private_network/node2/geth/lightchaindata cache=16 handles=16
 INFO [12-17|10:19:13] Persisted trie from memory database      nodes=3 size=503.00B time=11.288µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
 INFO [12-17|10:19:13] Successfully wrote genesis state         database=lightchaindata                                                           hash=4189da…65f92f
 ```
@@ -192,8 +192,27 @@ instance: Geth/v1.8.1-stable-1e67410e/linux-amd64/go1.9.4
 
 > 
 ```
+## Start ##
+ ```console
+foo@bar:~$ sudo geth --datadir $ETHEREUM_HOME --networkid 15
+INFO [12-17|10:25:50] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [12-17|10:25:50] Starting peer-to-peer node               instance=Geth/v1.8.1-stable-1e67410e/linux-amd64/go1.9.4
+INFO [12-17|10:25:50] Allocated cache and file handles         database=/home/foo/ethereum_private_network/geth/chaindata cache=768 handles=512
+INFO [12-17|10:25:50] Initialised chain configuration          config="{ChainID: 1 Homestead: 1150000 DAO: 1920000 DAOSupport: true EIP150: 2463000 EIP155: 2675000 EIP158: 2675000 Byzantium: 4370000 Engine: ethash}"
+INFO [12-17|10:25:50] Disk storage enabled for ethash caches   dir=/home/foo/ethereum_private_network/geth/ethash count=3
+INFO [12-17|10:25:50] Disk storage enabled for ethash DAGs     dir=/home/fooo/.ethash                                      count=2
+INFO [12-17|10:25:50] Initialising Ethereum protocol           versions="[63 62]" network=15
+INFO [12-17|10:25:50] Loaded most recent local header          number=0 hash=d4e567…cb8fa3 td=17179869184
+INFO [12-17|10:25:50] Loaded most recent local full block      number=0 hash=d4e567…cb8fa3 td=17179869184
+INFO [12-17|10:25:50] Loaded most recent local fast block      number=0 hash=d4e567…cb8fa3 td=17179869184
+INFO [12-17|10:25:50] Loaded local transaction journal         transactions=0 dropped=0
+INFO [12-17|10:25:50] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [12-17|10:25:50] Starting P2P networking 
+INFO [12-17|10:25:52] UDP listener up                          self=enode://dddf02c0553a42a1afec6d46562a3f2c313e20beb95bb4a767caa135252846d7a02b4c039d34c74848d8141234e639015b2d78c94f789e226e69d30c14676322@[::]:30303
+INFO [12-17|10:25:52] RLPx listener up                         self=enode://dddf02c0553a42a1afec6d46562a3f2c313e20beb95bb4a767caa135252846d7a02b4c039d34c74848d8141234e639015b2d78c94f789e226e69d30c14676322@[::]:30303
+INFO [12-17|10:25:52] IPC endpoint opened                      url=/home/foo/ethereum_private_network/geth.ipc
+
  
-foo@bar:~$ sudo geth --datadir path/to/custom/data/folder --networkid 15
  
  
  ## REFERENCES
