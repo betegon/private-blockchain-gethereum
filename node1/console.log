@@ -1,0 +1,25 @@
+WARN [02-04|13:20:26] No etherbase set and no accounts found as default 
+INFO [02-04|13:20:26] Starting peer-to-peer node               instance=Geth/v1.7.3-stable-4bb3c89d/linux-amd64/go1.9
+INFO [02-04|13:20:26] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum/node1/geth/chaindata cache=128 handles=1024
+WARN [02-04|13:20:26] Upgrading database to use lookup entries 
+INFO [02-04|13:20:26] Initialised chain configuration          config="{ChainID: 15 Homestead: 0 DAO: <nil> DAOSupport: false EIP150: <nil> EIP155: 0 EIP158: 0 Byzantium: <nil> Engine: unknown}"
+INFO [02-04|13:20:26] Database deduplication successful        deduped=0
+INFO [02-04|13:20:26] Disk storage enabled for ethash caches   dir=/home/betegon/Desktop/ethereum/node1/geth/ethash count=3
+INFO [02-04|13:20:26] Disk storage enabled for ethash DAGs     dir=/home/betegon/.ethash                            count=2
+INFO [02-04|13:20:26] Initialising Ethereum protocol           versions="[63 62]" network=1
+INFO [02-04|13:20:26] Loaded most recent local header          number=0 hash=4189da…65f92f td=100
+INFO [02-04|13:20:26] Loaded most recent local full block      number=0 hash=4189da…65f92f td=100
+INFO [02-04|13:20:26] Loaded most recent local fast block      number=0 hash=4189da…65f92f td=100
+INFO [02-04|13:20:26] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [02-04|13:20:26] Starting P2P networking 
+INFO [02-04|13:20:28] Mapped network port                      proto=udp extport=30303 intport=30303 interface="UPNP IGDv1-IP1"
+INFO [02-04|13:20:28] UDP listener up                          self=enode://54d2f58265b1197f6232593e6c530c7bd914ba5e9516e0f98e7078c9b74697eee8afe45dcad2fcd18d38d8a4b129bf7903ff50f5a0f1c6a2898e7a4a27b02e95@62.42.40.7:30303
+INFO [02-04|13:20:28] RLPx listener up                         self=enode://54d2f58265b1197f6232593e6c530c7bd914ba5e9516e0f98e7078c9b74697eee8afe45dcad2fcd18d38d8a4b129bf7903ff50f5a0f1c6a2898e7a4a27b02e95@62.42.40.7:30303
+INFO [02-04|13:20:28] IPC endpoint opened: /home/betegon/Desktop/ethereum/node1/geth.ipc 
+INFO [02-04|13:20:29] Mapped network port                      proto=tcp extport=30303 intport=30303 interface="UPNP IGDv1-IP1"
+INFO [02-04|13:20:29] IPC endpoint closed: /home/betegon/Desktop/ethereum/node1/geth.ipc 
+INFO [02-04|13:20:29] Blockchain manager stopped 
+INFO [02-04|13:20:29] Stopping Ethereum protocol 
+INFO [02-04|13:20:29] Ethereum protocol stopped 
+INFO [02-04|13:20:29] Transaction pool stopped 
+INFO [02-04|13:20:29] Database closed                          database=/home/betegon/Desktop/ethereum/node1/geth/chaindata

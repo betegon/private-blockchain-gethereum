@@ -1,0 +1,77 @@
+INFO [02-05|01:22:16] Starting peer-to-peer node               instance=Geth/v1.7.3-stable-4bb3c89d/linux-amd64/go1.9
+INFO [02-05|01:22:16] Allocated cache and file handles         database=/node1/geth/chaindata cache=128 handles=1024
+INFO [02-05|01:22:17] Initialised chain configuration          config="{ChainID: 1 Homestead: 1150000 DAO: 1920000 DAOSupport: true EIP150: 2463000 EIP155: 2675000 EIP158: 2675000 Byzantium: 4370000 Engine: ethash}"
+INFO [02-05|01:22:17] Disk storage enabled for ethash caches   dir=/node1/geth/ethash count=3
+INFO [02-05|01:22:17] Disk storage enabled for ethash DAGs     dir=/home/betegon/.ethash count=2
+INFO [02-05|01:22:18] Initialising Ethereum protocol           versions="[63 62]" network=1234
+INFO [02-05|01:22:19] Loaded most recent local header          number=3794251 hash=7fb6cb…777a55 td=303427662390972042203
+INFO [02-05|01:22:19] Loaded most recent local full block      number=0       hash=d4e567…cb8fa3 td=17179869184
+INFO [02-05|01:22:19] Loaded most recent local fast block      number=3757852 hash=7129f9…6bf741 td=286222067605158648714
+INFO [02-05|01:22:19] Loaded local transaction journal         transactions=0 dropped=0
+INFO [02-05|01:22:19] Upgrading chain index                    type=bloombits percentage=0
+INFO [02-05|01:22:19] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [02-05|01:22:19] Starting P2P networking 
+INFO [02-05|01:22:21] Mapped network port                      proto=udp extport=30303 intport=30303 interface="UPNP IGDv1-IP1"
+INFO [02-05|01:22:22] UDP listener up                          self=enode://90f190279795bbccef15e8124a1e92147be3f8537641d94bf5d480afc34e5b66551e2fd116f32fe521b49d00098f9f764728e367f59557ed2dba3de6b180939f@62.42.40.7:30303
+INFOINFO [02-05|02:18:33] Regenerated local transaction journal    transactions=0 accounts=0
+f15e8124a1e92147be3f8537641d94bf5d480afc34e5b66551e2fd116f32fe521b49d00098f9f764728e367f59557ed2dba3de6b180939f@62.42.40.7:30303
+INFO [02-05|01:22:22] IPC endpoint opened: /node1/geth.ipc 
+INFO [02-05|01:22:22] Mapped network port                      proto=tcp extport=30303 intport=30303 interface="UPNP IGDv1-IP1"
+INFO [02-05|01:22:27] Upgrading chain index                    type=bloombits percentage=1
+INFO [02-05|01:22:35] Upgrading chain index                    type=bloombits percentage=3
+INFO [02-05|01:22:43] Upgrading chain index                    type=bloombits percentage=5
+INFO [02-05|01:22:52] Upgrading chain index                    type=bloombits percentage=7
+INFO [02-05|01:23:00] Upgrading chain index                    type=bloombits percentage=9
+INFO [02-05|01:23:08] Upgrading chain index                    type=bloombits percentage=10
+INFO [02-05|01:23:16] Upgrading chain index                    type=bloombits percentage=12
+INFO [02-05|01:23:25] Upgrading chain index                    type=bloombits percentage=14
+INFO [02-05|01:23:33] Upgrading chain index                    type=bloombits percentage=16
+INFO [02-05|01:23:41] Upgrading chain index                    type=bloombits percentage=18
+INFO [02-05|01:23:49] Upgrading chain index                    type=bloombits percentage=20
+INFO [02-05|01:23:58] Upgrading chain index                    type=bloombits percentage=21
+INFO [02-05|01:24:06] Upgrading chain index                    type=bloombits percentage=23
+INFO [02-05|01:24:14] Upgrading chain index                    type=bloombits percentage=25
+INFO [02-05|01:24:23] Upgrading chain index                    type=bloombits percentage=26
+INFO [02-05|01:24:31] Upgrading chain index                    type=bloombits percentage=28
+INFO [02-05|01:24:39] Upgrading chain index                    type=bloombits percentage=30
+INFO [02-05|01:24:48] Upgrading chain index                    type=bloombits percentage=31
+INFO [02-05|01:24:56] Upgrading chain index                    type=bloombits percentage=33
+INFO [02-05|01:25:04] Upgrading chain index                    type=bloombits percentage=34
+INFO [02-05|01:25:13] Upgrading chain index                    type=bloombits percentage=36
+INFO [02-05|01:25:21] Upgrading chain index                    type=bloombits percentage=38
+INFO [02-05|01:25:29] Upgrading chain index                    type=bloombits percentage=39
+INFO [02-05|01:25:38] Upgrading chain index                    type=bloombits percentage=41
+INFO [02-05|01:25:46] Upgrading chain index                    type=bloombits percentage=42
+INFO [02-05|01:25:55] Upgrading chain index                    type=bloombits percentage=44
+INFO [02-05|01:26:03] Upgrading chain index                    type=bloombits percentage=45
+INFO [02-05|01:26:11] Upgrading chain index                    type=bloombits percentage=47
+INFO [02-05|01:26:19] Upgrading chain index                    type=bloombits percentage=49
+INFO [02-05|01:26:28] Upgrading chain index                    type=bloombits percentage=50
+INFO [02-05|01:26:36] Upgrading chain index                    type=bloombits percentage=52
+INFO [02-05|01:26:45] Upgrading chain index                    type=bloombits percentage=53
+INFO [02-05|01:26:53] Upgrading chain index                    type=bloombits percentage=55
+INFO [02-05|01:27:01] Upgrading chain index                    type=bloombits percentage=57
+INFO [02-05|01:27:10] Upgrading chain index                    type=bloombits percentage=58
+INFO [02-05|01:27:18] Upgrading chain index                    type=bloombits percentage=60
+INFO [02-05|01:27:27] Upgrading chain index                    type=bloombits percentage=62
+INFO [02-05|01:27:35] Upgrading chain index                    type=bloombits percentage=64
+INFO [02-05|01:27:43] Upgrading chain index                    type=bloombits percentage=66
+INFO [02-05|01:27:51] Upgrading chain index                    type=bloombits percentage=68
+INFO [02-05|01:28:00] Upgrading chain index                    type=bloombits percentage=70
+INFO [02-05|01:28:08] Upgrading chain index                    type=bloombits percentage=72
+INFO [02-05|01:28:16] Upgrading chain index                    type=bloombits percentage=74
+INFO [02-05|01:28:24] Upgrading chain index                    type=bloombits percentage=76
+INFO [02-05|01:28:32] Upgrading chain index                    type=bloombits percentage=79
+INFO [02-05|01:28:40] Upgrading chain index                    type=bloombits percentage=81
+INFO [02-05|01:28:49] Upgrading chain index                    type=bloombits percentage=83
+INFO [02-05|01:28:57] Upgrading chain index                    type=bloombits percentage=85
+INFO [02-05|01:29:05] Upgrading chain index                    type=bloombits percentage=87
+INFO [02-05|01:29:13] Upgrading chain index                    type=bloombits percentage=89
+INFO [02-05|01:29:21] Upgrading chain index                    type=bloombits percentage=92
+INFO [02-05|01:29:29] Upgrading chain index                    type=bloombits percentage=96
+INFO [02-05|01:29:38] Upgrading chain index                    type=bloombits percentage=98
+INFO [02-05|01:29:45] Finished upgrading chain index           type=bloombits
+INFO [02-05|06:00:35] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [02-05|06:01:58] Block synchronisation started 
+WARN [02-05|06:02:00] Ancestor below allowance                 peer=288b97262895b1c7 number=2407801 hash=082db5…b34238 allowance=3667852
+WARN [02-05|06:02:00] Synchronisation failed, dropping peer    peer=288b97262895b1c7 err="retrieved ancestor is invalid"
