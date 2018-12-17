@@ -1,11 +1,35 @@
 # Private blockchain with geth
 This is a quick introduction to create private blockchain networks over Ethereum using geth.
 
-## 0. create a home  blockchain folder: #
-$ mkdir ethereum 
+## Requisites ##
 
-0. export variable: WE HAVE TO DO IT EVERYTIME WE START A NEW TERMINAL.
-$ export ETHEREUM_HOME='/home/betegon/Desktop/ethereum' # check that it is ok: $ $ETHEREUM_HOME and also check: $ printenv | grep ETHEREUM_HOME
+* Linux-like Operative System. Tested particularily in Ubuntu 16.04.03 LTE
+*
+
+## 0.1 Create a home blockchain folder: ##
+```console
+foo@bar:~$ mkdir ethereum_private_network
+```
+## 0.2 Export variable: ##
+```console
+foo@bar:~$ export ETHEREUM_HOME='/home/foo/Desktop/ethereum_private_network' 
+```
+###0.2.1 Check: ### 
+```console
+foo@bar:~$ $ETHEREUM_HOME 
+bash: /home/foo/Desktop/ethereum_private_network: Is a directory
+foo@bar:~$ printenv | grep ETHEREUM_HOME
+ETHEREUM_HOME=/home/foo/Desktop/ethereum_private_network
+```
+This way, you will have to export the variable every time you start your computer. 
+In order to save it, you should save these commands as lines in your `~/.bashrc` file:
+```vim
+ export ETHEREUM_HOME='/home/foo/Desktop/ethereum_private_network'
+```
+
+
+[genesis.json](genesis.json)
+
 
 1. create genesis file (chainId: 15, for future references the network id will be 15).
 
