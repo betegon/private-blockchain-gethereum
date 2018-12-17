@@ -73,7 +73,7 @@ INFO [12-17|09:49:49] Successfully wrote genesis state         database=lightcha
 ```
 As it is visible in the logs, everything went fine.
 
-## 3. Start interactive geth  javascript console ##
+## 3. Start interactive geth javascript console ##
 This console is powerful for sending transactions, starting the miner... 
 command below let you sabe all logs in console.log.
 
@@ -90,8 +90,8 @@ instance: Geth/v1.8.1-stable-1e67410e/linux-amd64/go1.9.4
 > eth.blockNumber
 0
 ```
-## 4. once in the console type: ##
-> admin. and press "tab" (2 times) to see all options you have
+## 4. Admin commands: ##
+Type `admin.` and press "tab" (2 times) to see all options there are:
 ```console
 > admin. 
 admin.addPeer              admin.peers                
@@ -108,26 +108,92 @@ admin.isPrototypeOf        admin.toString
 admin.nodeInfo             admin.valueOf 
 ```
 ## 5. See your node info: ##
-Show IP, ports and so on. It is needed to use other different port for other nodes (obviously). It also outputs enode: ... this defines our node. to identify it we will use the last 4 hexadecimal numbers before 939f@62.42.(ip)
+Show IP, ports and so on. It is needed to use other different port for other nodes (obviously). 
+```console
 > admin.nodeInfo 
+{
+  enode: "enode://54d2f58265b1197f6232593e6c530c7bd914ba5e9516e0f98e7078c9b74697eee8afe45dcad2fcd18d38d8a4b129bf7903ff50f5a0f1c6a2898e7a4a27b02e95@[::]:30303",
+  id: "54d2f58265b1197f6232593e6c530c7bd914ba5e9516e0f98e7078c9b74697eee8afe45dcad2fcd18d38d8a4b129bf7903ff50f5a0f1c6a2898e7a4a27b02e95",
+  ip: "::",
+  listenAddr: "[::]:30303",
+  name: "Geth/v1.8.1-stable-1e67410e/linux-amd64/go1.9.4",
+  ports: {
+    discovery: 30303,
+    listener: 30303
+  },
+  protocols: {
+    eth: {
+      config: {
+        chainId: 15,
+        eip150Hash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+        eip155Block: 0,
+        eip158Block: 0,
+        homesteadBlock: 0
+      },
+      difficulty: 100,
+      genesis: "0x4189da591f00bb72ff5942b44ba613f25002903e356687b4bf504ab3ba65f92f",
+      head: "0x4189da591f00bb72ff5942b44ba613f25002903e356687b4bf504ab3ba65f92f",
+      network: 1
+    }
+  }
+}
+```
 
-## 6. another important command for creating accounts,list them, list wallets...: ##
+## 6. Personal commands ##
+`personal.` is another important command for creating accounts,list them, list wallets...
+```console
 > personal. (press tab 2 times) and shows up all options
+personal._requestManager personal.listWallets     
+personal.constructor     personal.lockAccount     
+personal.deriveAccount   personal.newAccount      
+personal.ecRecover       personal.openWallet      
+personal.getListAccounts personal.sendTransaction 
+personal.getListWallets  personal.sign            
+personal.importRawKey    personal.signTransaction 
+personal.listAccounts    personal.unlockAccount   
+```
 
-## 7. We will create our first account: ##
+## 7. Create your first account: ##
+```console
 > personal.newAccount()
+Passphrase: 
+Repeat passphrase: 
+"0x88c19e733f006d1659b360d9d135c9dcb56126b0"
+```
 ## 8. see if the account is well created: ## 
+```console
 > personal.listAcounts 
-
+["0x88c19e733f006d1659b360d9d135c9dcb56126b0"]
+```
 ## 9. Initialize second node: ##
-$ geth --datadir "$ETHEREUM_HOME/node2" init "$ETHEREUM_HOME/genesis.json" # this will create a node in the path given .../node2. SEE THAT WE use the same genesis block!
+You can use other terminal if you want, so you can have both open.
+NOTE THAT YOU HAVE TO SPECIFY THE SAME [genesis.json](genesis.json).
+```console 
+foo@bar:~$ geth --datadir "$ETHEREUM_HOME/node2" init "$ETHEREUM_HOME/genesis.json" 
+INFO [12-17|10:19:13] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [12-17|10:19:13] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum_private_network/node2/geth/chaindata cache=16 handles=16
+INFO [12-17|10:19:13] Persisted trie from memory database      nodes=3 size=503.00B time=9.521µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [12-17|10:19:13] Successfully wrote genesis state         database=chaindata                                                           hash=4189da…65f92f
+INFO [12-17|10:19:13] Allocated cache and file handles         database=/home/betegon/Desktop/ethereum_private_network/node2/geth/lightchaindata cache=16 handles=16
+INFO [12-17|10:19:13] Persisted trie from memory database      nodes=3 size=503.00B time=11.288µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [12-17|10:19:13] Successfully wrote genesis state         database=lightchaindata                                                           hash=4189da…65f92f
+```
 
 
+## 10. Start console for second node ##
+ Different port from 1st node. First node port was `listener: 30303` (step 5). 
+ Also `nodiscover` is used for avoiding the node to attach to other neighbor blockchain (this is little paranoid, but just in case). and network id.
+```console
+foo@bar:~$ sudo geth --datadir "$ETHEREUM_HOME/node2" --port 30304 --nodiscover --networkid 1234 console 2>console.log
+Welcome to the Geth JavaScript console!
 
-## 10. Start interactive geth  javascript console second node ##
-$ sudo geth --datadir "$ETHEREUM_HOME/node2" --port 30304 --nodiscover --networkid 1234 console 2>console.log # different port from 1st node. also nodiscover for avoiding the node to attach to other neighbor blockchain (this is little paranoid, but just in case). and network id.
- geth --datadir path/to/custom/data/folder --networkid 15
+instance: Geth/v1.8.1-stable-1e67410e/linux-amd64/go1.9.4
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+
+> 
+```
  
+foo@bar:~$ sudo geth --datadir path/to/custom/data/folder --networkid 15
  
  
  ## REFERENCES
