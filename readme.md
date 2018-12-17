@@ -14,7 +14,7 @@ foo@bar:~$ mkdir ethereum_private_network
 ```console
 foo@bar:~$ export ETHEREUM_HOME='/home/foo/Desktop/ethereum_private_network' 
 ```
-###0.2.1 Check: ### 
+### 0.2.1 Check: ### 
 ```console
 foo@bar:~$ $ETHEREUM_HOME 
 bash: /home/foo/Desktop/ethereum_private_network: Is a directory
@@ -28,10 +28,36 @@ In order to save it, you should save these commands as lines in your `~/.bashrc`
 ```
 
 
+## 1. Create genesis file  ##
+A genesis block is the first block of a block chain. Modern versions of Bitcoin number it as block 0, though very early versions counted it as block 1. The genesis block is almost always hardcoded into the software of the applications that utilize its block chain.
+
 [genesis.json](genesis.json)
+```json
+{
+    "config": {
+        "chainId": 15,
+        "homesteadBlock": 0,
+        "eip155Block": 0,
+        "eip158Block": 0
+    },
+    "difficulty": "100",
+    "gasLimit": "2100000",
+    "alloc": {
+        "7df9a875a174b3bc565e6424a0050ebc1b2d1d82": { "balance": "300000" },
+        "f41c74c9ae680c1aa78f42e5647a62f353b7bdde": { "balance": "400000" }
+    }
+}
+```
+*  `"config"`: The blockchain configuration.
+*  `"chainId"`: Protection of the replay attack(an unauthorized user acting as the original sender). For example, if an action is validated by matching certain value that depends on the chain id, attackers cannot easily get the same value with a different id. Basically, **for future references, the network id will be 15**.
+*  `"homesteadBlock"`: Homestead is the second major release of Ethereum(the first release is Frontier). The value 0 means that you are using this release.
+*  `"epi155Block"`: epi stands for Ethereum Improvement Proposal, where developers propose ideas on how to improve Ethereum and contribute to this project.
+*  `"epi158Block"`:  Your chain won't be hard-forking for these changes, so leave as 0. 
+* `"difficulty"`: Mining difficulty. Set this value low so you don’t have to wait too long for mining blocks.
+* `"gasLimit"`: The limit of gas cost per block. Set this value high to avoid being limited when testing.
+* `"alloc"`:  Pre-funded address, the first parameter of each is the address. Need to be a 40 digits hex string(160 bit, one hex digit is 4 bit). Note that this does not create an account.
 
 
-1. create genesis file (chainId: 15, for future references the network id will be 15).
 
 2. Initialize first node: 
 $ geth --datadir "$ETHEREUM_HOMEº/node1" init "$ETHEREUM_HOME/genesis.json" # this will create a node in the path given .../node1
@@ -59,3 +85,10 @@ $ sudo geth --datadir "$ETHEREUM_HOME/node2" --port 30304 --nodiscover --network
 
 
  geth --datadir path/to/custom/data/folder --networkid 15
+ 
+ 
+ 
+ ## REFERENCES
+ * Definition of Genesis block: https://en.bitcoin.it/wiki/Genesis_block
+ *  Genesis block parameters: https://github.com/ethereum/go-ethereum/blob/feeccdf4ec1084b38dac112ff4f86809efd7c0e5/params/config.go#L71
+ 
