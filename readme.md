@@ -94,9 +94,22 @@ instance: Geth/v1.8.1-stable-1e67410e/linux-amd64/go1.9.4
 > admin. and press "tab" (2 times) to see all options you have
 ```console
 > admin. 
+admin.addPeer              admin.peers                
+admin.clearHistory         admin.propertyIsEnumerable 
+admin.constructor          admin.removePeer           
+admin.datadir              admin.sleep                
+admin.exportChain          admin.sleepBlocks          
+admin.getDatadir           admin.startRPC             
+admin.getNodeInfo          admin.startWS              
+admin.getPeers             admin.stopRPC              
+admin.hasOwnProperty       admin.stopWS               
+admin.importChain          admin.toLocaleString       
+admin.isPrototypeOf        admin.toString             
+admin.nodeInfo             admin.valueOf 
 ```
-## 5. We can see our node info: ##
-> admin.nodeInfo # shows the ip, ports and so on. we will need to use other different port for other nodes (obviously). It also outputs enode: ... this defines our node. to identify it we will use the last 4 hexadecimal numbers before 939f@62.42.(ip)
+## 5. See your node info: ##
+Show IP, ports and so on. It is needed to use other different port for other nodes (obviously). It also outputs enode: ... this defines our node. to identify it we will use the last 4 hexadecimal numbers before 939f@62.42.(ip)
+> admin.nodeInfo 
 
 ## 6. another important command for creating accounts,list them, list wallets...: ##
 > personal. (press tab 2 times) and shows up all options
