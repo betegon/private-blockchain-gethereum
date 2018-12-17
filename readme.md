@@ -1,6 +1,8 @@
-# introduction to create private blockchain network over Ethereum with geth
+# Private blockchain with geth
+This is a quick introduction to create private blockchain networks over Ethereum using geth.
 
-0. create a home  blockchain folder: $ mkdir ethereum 
+## 0. create a home  blockchain folder: #
+$ mkdir ethereum 
 
 0. export variable: WE HAVE TO DO IT EVERYTIME WE START A NEW TERMINAL.
 $ export ETHEREUM_HOME='/home/betegon/Desktop/ethereum' # check that it is ok: $ $ETHEREUM_HOME and also check: $ printenv | grep ETHEREUM_HOME
