@@ -4,7 +4,7 @@ This is a quick introduction to create private blockchain networks over Ethereum
 ## Requisites ##
 
 * **Linux-like Operative System**: Tested particularily in Ubuntu 16.04.03 LTE
-* **Geth**:  Tested in version 1.8.1-stable-1e67410e but is should work with all compatible versions. 
+* **Geth**:  Tested in version 1.8.1-stable-1e67410e but it should work with all compatible versions. 
 
 ## 0.1 Create a home blockchain folder: ##
 ```console
